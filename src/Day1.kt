@@ -30,10 +30,11 @@ class PuzzleManager(val x: X = X(0.0), val y:Y = Y(0.0), var direction: Double =
             }
         }
         println("${direction}")
-        println("${Math.floor(Math.cos(Math.toRadians(direction)))}")
-        println("${Math.floor(Math.sin(Math.toRadians(direction)))}")
-        x.coord += move.get(1).toString().toInt() * Math.round(Math.cos(Math.toRadians(direction)))
-        y.coord += move.get(1).toString().toInt() * Math.round(Math.sin(Math.toRadians(direction)))
+        println("${Math.round(Math.cos(Math.toRadians(direction)))}")
+        println("${Math.round(Math.sin(Math.toRadians(direction)))}")
+        var step = move.substring(1)
+        x.coord += step.toInt() * Math.round(Math.cos(Math.toRadians(direction)))
+        y.coord += step.toInt() * Math.round(Math.sin(Math.toRadians(direction)))
 
         println("Coordonées : {${x.coord},${y.coord}}")
     }
